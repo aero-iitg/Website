@@ -70,7 +70,7 @@ body {
 
 #next, #prev{
     position: absolute;
-    top: 40%;
+    top: 50%;
     color: #fff;
     background-color: transparent;
     border: none;
@@ -97,7 +97,7 @@ body {
 
 .next1,.prev1{
     position: absolute;
-    top:90%;
+    top:92%;
     background-color: rgba(15, 15, 15, 0.81);
     color: white;
     border:none;
@@ -160,7 +160,7 @@ body > main > div.details > div.item1.active > img{
 
 .details span{
     position: absolute;
-    top:0; right:41.6rem;/*26vw*/
+    top:0; right:40rem;/*26vw*/
     font-size: 5.6rem;/*3.5*/
     font-weight: 100;
     color: #fff;

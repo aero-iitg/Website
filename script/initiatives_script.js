@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       let prev = document.getElementById('prev');
       console.log(items.length);
   
-      let active = 0;
+      let active = 3;
   
       function loadShow() {
         let stt = 0;

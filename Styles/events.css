@@ -1,0 +1,143 @@
+html{
+    overscroll-behavior-block: contain;
+}
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Hind:wght@400;500&family=Philosopher&display=swap');
+
+body {
+
+   background-image: url('images/background_project.png');
+   background-attachment: fixed;
+   color: aliceblue;
+   
+}
+
+
+main
+{
+    .latest, .participated
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-family: 'Bai Jamjuree', sans-serif;
+        color: #FFF;
+        font-size: 3rem;
+        margin: 0;
+    }
+    .latest span, .participated span
+    {
+        color:#73B1DD;
+        text-emphasis: none;
+    }
+    .participated
+    {
+        margin-top: -15px;
+    }
+    .events
+    {
+        margin-top: -15px;;
+    }
+
+    .events, .competitions
+    {
+        margin-bottom: 0;
+        color: rgba(115, 177, 221, 0.40);
+        font-size: 6.5rem;
+        font-family: 'Monoton', cursive;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        vertical-align: top;
+    }
+
+    .cards
+    {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin:50px;
+        flex-wrap: wrap;
+    }
+
+    .box
+    {
+        width:300px;
+        height:360px;
+        flex-shrink:2;
+        overflow:hidden;
+        background-color: #323232;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flow-root;
+        margin: 14px;
+    }
+    .books
+    {
+        width:300px;
+        height:300px;
+        transition: all 1s;
+    }
+    
+
+    .box.desc
+    {
+        width:300px;
+        height:300px;
+        position: relative;
+        margin:0;
+        overflow: hidden;
+    }
+    .desc
+    {
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: all 1s;
+    }
+    .event-name, .comp-name
+    {
+        font-size: 20px;
+        font-family: Bai Jamjuree;
+        font-weight: 500;
+        margin:0;
+        text-align: center;
+    }
+    .event-name-1,.event-name-2, .event-name-3, .comp-name-1, .comp-name-2, .comp-name-3
+    {
+        padding-top: 13px;
+    }
+    .box:hover
+    {
+        cursor:pointer;
+    }
+
+    .box:hover .books
+    {
+        transform:translateY(-260px);
+        position: relative;
+    }
+
+    .box:hover .description
+    {
+        display: block;
+    }
+    .description
+    {
+        display:none;
+    }
+
+    .box:hover .desc
+    {
+        position: relative;
+        transform:translateY(-240px);
+        margin:0px;
+    }
+
+    
+}

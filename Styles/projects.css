@@ -1,0 +1,274 @@
+.projects-page{
+    background-image: url(images/galaxy-night-landscape.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    /* display: flex;
+    flex-direction: column; */
+    height: 120vh;
+    /* overflow: hidden; */
+    
+    
+}
+.club
+{
+    color:#ffffff;
+    display: flex;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    text-emphasis: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -15px;
+}
+.club span
+    {
+        color:#73B1DD;
+        text-emphasis: none;
+    }
+
+.projects
+{
+    margin-top: -15px;
+    margin-bottom: 0;
+    color: rgba(115, 177, 221, 0.40);
+    font-size: 6.5rem;
+    font-family: 'Monoton', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: top;
+}
+.clubProjectsTitle{
+    text-align: center;
+}
+.main-page{
+    height: 75%;
+    width: 100%;
+    align-self: center;
+    /* margin-left: 15%; */
+    margin-top: -3%;
+}
+
+
+.slide{
+    margin-top: 41px;
+    transform-style: preserve-3d;
+    perspective: 5000px;    
+    /* border: 2px solid white; */
+    transform:rotateX(-4deg);
+    /* width: 120px; */
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    /* margin-left: 34vw */
+    /* float: right; */
+    position: relative;
+    height: 100%;
+}
+/* #caro{
+    transition: transform 3s ease;
+    
+} */
+/* .smallcarousal{
+    margin-top: 160px;
+    width: 420px;
+    transform-style: preserve-3d;
+    animation: rotation 14s infinite linear;
+    position: absolute;
+    left: 50%;
+
+    
+} */
+.carousal{
+    /* margin: auto; */
+    margin-top: 140px;
+    width: 420px;
+    transform-style: preserve-3d;
+    animation: rotation 14s infinite linear;
+    transition: all 5s ease;
+    position: absolute;
+    left: 36%;
+    /* box-shadow:-9px 88px 69px 125px white, -152px -121px 139px 80px white, 152px -121px 139px 80px white; */
+    /* box-shadow: 2px 2px 2px 2px white; */
+    /* margin-left: 12px; */
+    /* bottom: 0; */
+}
+/* .carousal:focus{
+    animation: none;
+    transform: scale(0.4) translateY(222px);
+    background-color: white ;
+    
+} */
+
+.projDescImage{
+    margin: 12px;;
+    border: 4px solid white;
+    border-radius: 15px;
+    width: 70%;
+}
+.c{
+    /* animation: none; */
+    width: 800px;
+    text-align: center;
+    height:100%;
+    align-self: flex-start;
+    /* transform: scale(0); */
+    position: relative;
+    /* margin-left: 10%; */
+    margin: auto;
+    transition: all 1s ease;
+    /* display: none; */
+    overflow: hidden;
+    text-shadow: 2px 2px black;
+    /* background: rgba(255,255,255,0.2); */
+
+}
+.c:nth-child(2){
+    display: none;
+
+}
+/* .c::after{
+    background: rgba(255,255,255,0.2);
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+} */
+.project-desc{
+    box-sizing: border-box;
+    /* padding: 3%; */
+    background: rgba(255,255,255,0.2);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5% ;
+    padding-bottom: 5%;
+    
+    width: 100%;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    height: 50%;
+    overflow-y: auto;
+    margin-right: 20px;
+    transform: scaleY(0);
+    display: none;
+    
+    /* Track */
+}
+::-webkit-scrollbar {
+width: 14px;
+}
+
+/* Track Color */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 13px;
+    /* overflow: hidden; */
+background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+
+/* .c img{
+    width: 100%;
+    height: auto;
+} */
+
+.slide .fig{
+    /* background: white; */
+    width: 100%;
+    height: auto;
+position: absolute;
+transition: all 1s ease;
+display: flex;
+flex-direction: column;
+/* box-shadow: 2px -5px 19px 30px aliceblue; */
+
+    
+}
+
+.fig span{
+    /* text-align: center; */
+    /* position: relative; */
+    margin: auto;
+    margin-top: 12px;
+    /* text-shadow: 2px 2px 2px 2px white; */
+    /* width: 100%; */
+
+}
+/* 370px or 29vw */
+.slide .fig:nth-child(2){
+    transform:rotateY(60deg) translateZ(370px);
+}
+
+.slide .fig:nth-child(3){
+    transform:rotateY(120deg)  translateZ(370px);
+}
+.slide .fig:nth-child(4){
+    transform:rotateY(180deg) translateZ(370px);
+}
+.slide .fig:nth-child(5){
+    transform:rotateY(240deg) translateZ(370px);
+}
+.slide .fig:nth-child(6){
+    transform:rotateY(300deg) translateZ(370px);
+}
+.slide .fig:nth-child(1){
+    transform:rotateY(360deg) translateZ(370px);
+}
+.slide .fig img{
+    width: 100%;
+    /* height: 100%; */
+    /* border-bottom: 27px solid palegreen; */
+    /* border-bottom: 27px solid white; */
+    height: 262px;
+    /* border: 2px solid green; */
+    /* box-shadow: 2px -5px 19px 30px aliceblue; */
+    border-radius: 14px;
+}
+@keyframes rotation{
+    from{
+        transform: rotateY(0deg);
+        
+    }to{
+        transform: rotateY(360deg);
+
+    }
+}
+
+@keyframes smallcaro{
+    from{
+        transform: scale(1) translateY(0);
+        box-shadow: none;
+    }to{
+        transform: scale(0.4) translateY(600px) ;
+        box-shadow:-9px 88px 69px 125px white, -152px -70px 139px 80px white, 152px -70px 139px 80px white;
+
+    }
+}
+@keyframes largecaro{
+    from{
+        transform: scale(0.4) translateY(600px) ;
+        box-shadow:-9px 88px 69px 125px white, -152px -70px 139px 80px white, 152px -70px 139px 80px white;
+    }to{
+        transform: scale(1) translateY(0);
+        box-shadow: none;
+        
+    }
+}

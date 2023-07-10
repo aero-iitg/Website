@@ -1,0 +1,111 @@
+.all{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+.Home-page{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+}
+.Home-page::after{
+    background-image: url(images/maxresdefault.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow-y: hidden;
+    transform-origin: bottom center;
+    animation: scaleBackground 80s linear infinite;
+    
+}
+.clubName{
+    margin-top: 12%;
+}
+.clubName{
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+}
+.clubName div{
+    text-shadow: 10px 6px 12px rgb(43,48,134);
+    font-weight:900;
+
+
+}
+.Home-page h1{
+    font-size: 7.5vw;
+    color: rgb(133,184,62);
+}
+
+.clouds{
+    overflow: hidden;
+    height: 85vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.clouds img{
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    animation: move calc(8s*var(--i)) linear infinite;
+    width: 100vw;
+
+}
+.top{
+    overflow: hidden;
+}
+
+.photo{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.about{
+    color: black;
+    width: 80vw;
+    align-self: center;
+    text-align: justify;
+    padding: 15px;
+}
+.about p{
+    line-height: 1.5;
+}
+.about h3{
+    text-align: center;
+}
+@keyframes move {
+    0% {
+        transform: translateX(-100%) scale(2);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) scale(2);
+    }
+}
+
+@keyframes scaleBackground {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+

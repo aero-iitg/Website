@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Hind:wght@400;500&family=Philosopher&display=swap');
+
+*{
+    margin:0px;
+}
+
+html{
+    font-size: 62.5%;
+}
+body {
+
+    /* background: url('./images/background_team.png'); */
+    box-sizing: border-box;
+    background-repeat: no-repeat; 
+    color: white;
+    font-size: 1.6rem;
+   color: aliceblue;
+   /* font-family:'Aclonica', sans-serif; */
+   font-family: 'Bai Jamjuree', sans-serif;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+   /* overflow: hidden; */
+}
+
+header {
+    z-index: 2;
+    /* position: absolute;
+    width: 100vw; */
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 5em auto 4em;
+    /* background: pink; */
+    /* width: 100%; */
+    /* .logo{
+        width: 7vw;
+        height: auto;
+        
+    } */
+    .notify{
+        margin-top: 0.5em;
+        
+    }
+    .notify:hover{
+        align-items: center;
+        .notification{
+            transform: scale(1.2);
+            align-items: center;
+        }
+    }
+    
+    
+    .nav_list{
+        display : flex;
+        margin : 0;
+        margin-top: 1em;
+        padding: 0;
+        padding-left: 30vw;
+        list-style: none;
+        letter-spacing: 1px;
+        justify-content: flex-end;
+    
+    }
+    .nav_link{
+        text-decoration: none;
+        color: inherit;
+        padding-right: 20px;
+    }
+    .nav_link:hover{
+        color:rgb(115,177,221);
+        text-decoration: underline;
+    }
+    .dropdown{
+        display: none;
+        padding-top: 2px;
+        background-color: rgba(255,255,255,0.2);
+        border-radius: 4px;
+        position: absolute;
+        
+    }
+
+    .dropdown a{
+        color: white;
+        text-decoration: none;
+    }
+    .dropdown li{
+        padding: 3px;
+    }
+    .nav_list-item:hover .dropdown{
+        display:block;
+        /* position: absolute; */
+    
+
+    }
+}
+/* body{
+
+    background: black;
+    border: 2px solid white;
+} */
+
+
+

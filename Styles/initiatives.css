@@ -70,11 +70,11 @@ body {
 
 #next, #prev{
     position: absolute;
-    top: 80%;
+    top: 60%;
     color: #fff;
     background-color: transparent;
     border: none;
-    font-size: 5rem;
+    font-size: 6rem;
     font-family: monospace;
     font-weight: bold;
     left: 16rem; /*10vw*/
@@ -97,7 +97,7 @@ body {
 
 .next1,.prev1{
     position: absolute;
-    top:98%;
+    top:92%;
     background-color: rgba(15, 15, 15, 0.81);
     color: white;
     border:none;

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/add.css">
+    <title>Competition Form</title>
+  </head>
+  <body>
+    <h1>Create Competition</h1>
+    <form id="competitionForm" enctype="multipart/form-data">
+      <label for="email">Your Email</label>
+      <input type="text" id="email" name="email" required><br><br>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <label for="competitionName">Competition Name:</label>
+      <input type="text" id="competitionName" name="competitionName" required><br><br>
+
+      <label for="competitionDescription">competition Description:</label>
+      <textarea id="competitionDescription" name="competitionDescription" required></textarea><br><br>
+
+      <label for="image">competition Image:</label>
+      <input type="file" id="image" name="image" onChange="selectFile(event)"><br><br>
+
+      <button type="submit">Create competition</button>
+    </form>
+    <script>
+        let selectedFile;
+          const selectFile = async (e) => {
+            selectedFile = e.target.files[0];  
+            console.log("hello");
+            if (selectedFile != undefined){
+                console.log(selectedFile);
+            }
+          };
+        document.getElementById("competitionForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent default form submission
+            var imageLink;
+            
+          const data = new FormData();
+          data.append("file", selectedFile);
+          data.append("upload_preset", "chat-app");
+          data.append("cloud_name", "dntch5frn");
+          fetch("https://api.cloudinary.com/v1_1/dntch5frn/raw/upload", {
+            method: "post",
+            body: data,
+          })
+          .then((res) => res.json())
+          .then((data) => {
+            imageLink=data.url.toString();
+            console.log(data.url.toString());
+            const requestData = {
+            competitionName: document.getElementById("competitionName").value,
+            competitionDescription: document.getElementById("competitionDescription").value,
+            imageLink: imageLink,
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value
+            };
+                fetch("https://aeroclubbackend.onrender.com/event/addCompetition", {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(requestData),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                    // Process the response data if needed
+                    window.alert(data.message);
+                    // console.log(data);
+                    })
+                    .catch(error => {
+                    // Handle any errors that occurred during the request
+                    console.error("Error:", error);
+                    });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+          
+
+  
+        });
+      </script>
+    
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/add.css">
+    <title>Event Form</title>
+  </head>
+  <body>
+    <h1>Create Event</h1>
+    <form id="eventForm" enctype="multipart/form-data">
+      <label for="email">Your Email</label>
+      <input type="text" id="email" name="email" required><br><br>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <label for="eventName">Event Name:</label>
+      <input type="text" id="eventName" name="eventName" required><br><br>
+
+      <label for="eventDescription">Event Description:</label>
+      <textarea id="eventDescription" name="eventDescription" required></textarea><br><br>
+
+      <label for="image">Event Image:</label>
+      <input type="file" id="image" name="image" onChange="selectFile(event)"><br><br>
+
+      <button type="submit">Create Event</button>
+    </form>
+    <script>
+        let selectedFile;
+          const selectFile = async (e) => {
+            selectedFile = e.target.files[0];  
+            console.log("hello");
+            if (selectedFile != undefined){
+                console.log(selectedFile);
+            }
+          };
+        document.getElementById("eventForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent default form submission
+            var imageLink;
+            
+          const data = new FormData();
+          data.append("file", selectedFile);
+          data.append("upload_preset", "chat-app");
+          data.append("cloud_name", "dntch5frn");
+          fetch("https://api.cloudinary.com/v1_1/dntch5frn/raw/upload", {
+            method: "post",
+            body: data,
+          })
+          .then((res) => res.json())
+          .then((data) => {
+            imageLink=data.url.toString();
+            console.log(data.url.toString());
+            const requestData = {
+            eventName: document.getElementById("eventName").value,
+            eventDescription: document.getElementById("eventDescription").value,
+            imageLink: imageLink,
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value
+            };
+                fetch("https://aeroclubbackend.onrender.com/event/addEvent", {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(requestData),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                    // Process the response data if needed
+                    window.alert(data.message);
+                    // console.log(data);
+                    })
+                    .catch(error => {
+                    // Handle any errors that occurred during the request
+                    console.error("Error:", error);
+                    });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+          
+
+  
+        });
+      </script>
+    
+  </body>
+</html>

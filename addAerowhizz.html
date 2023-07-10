@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/add.css">
+    <title>Aerowhizz Form</title>
+  </head>
+  <body>
+    <h1>Create Post</h1>
+    <form id="aerowhizzForm" enctype="multipart/form-data">
+      <label for="email">Your Email</label>
+      <input type="text" id="email" name="email" required><br><br>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <label for="images">Post Images:</label>
+      <input type="file" id="images" name="images" onChange="selectFile(event)" multiple><br><br>
+
+      <button type="submit">Add Post</button>
+    </form>
+    <script>
+          let selectedFiles;
+
+const selectFile = (e) => {
+  selectedFiles = Array.from(e.target.files);
+  console.log("Selected files:", selectedFiles);
+};
+
+document.getElementById("aerowhizzForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const uploadPromises = selectedFiles.map((selectedFile) => {
+    const data = new FormData();
+    data.append("file", selectedFile);
+    data.append("upload_preset", "chat-app");
+    data.append("cloud_name", "dntch5frn");
+
+    return fetch("https://api.cloudinary.com/v1_1/dntch5frn/raw/upload", {
+      method: "POST",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => data.url.toString())
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  Promise.all(uploadPromises)
+    .then((imageLinks) => {
+      console.log("Uploaded image links:", imageLinks);
+
+      const requestData = {
+        imageLinks: imageLinks,
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value
+      };
+
+      fetch("https://aeroclubbackend.onrender.com/initiatives/addAerowhizz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Process the response data if needed
+          // console.log(data);
+          window.alert(data.message);
+
+        })
+        .catch((error) => {
+          // Handle any errors that occurred during the request
+          console.error("Error:", error);
+        });
+    })
+    .catch((error) => {
+      // Handle any errors that occurred during the image upload
+      console.error("Error uploading images:", error);
+    });
+});
+      </script>
+    
+  </body>
+</html>

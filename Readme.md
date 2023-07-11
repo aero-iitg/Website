@@ -20,7 +20,7 @@ The Aeromodelling Club IIT Guwahati website offers the following features:
 4.  *Initiatives*: A section featuring articles, interviews, and insights related to aeromodelling.
 5. *Team*: A page dedicated to showcasing the talented individuals who contribute their skills, passion, and dedication to the club's success.
 6. *Contact*: Contact details of club representatives for inquiries, feedback, and collaboration opportunities. 
-
+7. *Add Events and Posts*: Feature to add events and posts quickly and easily directly to the website tailored specially for club members.
 
 
 #### Thank you for your interest in the Aeromodelling Club IIT Guwahati website! If you have any further questions or need assistance, please don't hesitate to reach out to us.

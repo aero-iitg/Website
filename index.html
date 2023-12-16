@@ -10,6 +10,19 @@
     <link rel="manifest" href="favicon_io\site.webmanifest">
     <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function toggelNav (){
+            const nav  = document.querySelector('.nav');
+            const toggelNav = document.querySelector('toggelNav');
+
+            if( nav.style.display === 'none'){
+                nav.style.display = 'block';
+            }else{
+                nav.style.display = 'none';
+            }
+
+        }
+    </script>
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="stylesheet" href="Styles/home.css">
     <link rel="stylesheet" href="Styles/contact.css">
@@ -19,9 +32,14 @@
     <div class="all">
 
         <div class="Home-page">
+            
             <div class="navbar" style=" color:black;">
                 <header>
                     <img src="Styles/images/Aero_Logo.png" alt="logo" class="logo" width="70" >
+                    
+                    <div class="toggelNav" onclick="toggelNav()">
+                        <img src="./align-right-regular-84.png" alt="">
+                    </div>
                     <nav class="nav">
                         <ul class="nav_list">
                             <li class="nav_list-item">
@@ -192,5 +210,6 @@
     
     
         <script src="./script/script.js"></script>
+       
     </body>
     </html>

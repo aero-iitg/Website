@@ -100,6 +100,30 @@ header {
     background: black;
     border: 2px solid white;
 } */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.toggelNav{
+    display: none;
+}
+.nav{
+    display: block;
+}
 
+@media screen and (max-width: 690px) {
+    .toggelNav{
+        display: block;
 
+    }
+    .nav{
+        display: none;
+    }
+    
+}
+@media screen and (min-width: 690px ) {
+    .nav{
+        display: block;
+    }
+}
 

@@ -13,19 +13,37 @@
     <script>
         function toggelNav (){
             const nav  = document.querySelector('.nav');
-            const toggelNav = document.querySelector('toggelNav');
+            const toggelNav = document.querySelector('.toggelNav');
 
             if( nav.style.display === 'none'){
-                nav.style.display = 'block';
+                nav.style.display = 'flex';
+                toggelNav.style.transform = "rotate(180deg)";
+                toggelNav.style.margin = '00px'
+                // toggelNav.st
             }else{
                 nav.style.display = 'none';
+                toggelNav.style.margin = '10px'
+                toggelNav.style.transform = "rotate(90deg)";
+                
+                
+
             }
 
         }
+        function widthChange() {
+            const nav  = document.querySelector('.nav');
+            const toggelNav = document.querySelector('.toggelNav');
+            if( window.innerWidth >= 690 ){
+                nav.style.display = 'flex';
+            }
+           
+        }
+        window.onresize = widthChange;
     </script>
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="stylesheet" href="Styles/home.css">
     <link rel="stylesheet" href="Styles/contact.css">
+    <link rel="stylesheet" href="Styles/media.css">
 
 </head>
 <body>
@@ -38,9 +56,11 @@
                     <img src="Styles/images/Aero_Logo.png" alt="logo" class="logo" width="70" >
                     
                     <div class="toggelNav" onclick="toggelNav()">
-                        <img src="./align-right-regular-84.png" alt="">
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                        <box-icon name='chevron-down' type='solid' width="100px"></box-icon>
+                        <img src="./dropdown.png" width="50px" height="40px" alt="">
                     </div>
-                    <nav class="nav">
+                    <nav class="nav" >
                         <ul class="nav_list">
                             <li class="nav_list-item">
                                 <a href="./" class="nav_link">Home</a>

@@ -10,19 +10,55 @@
     <link rel="manifest" href="favicon_io\site.webmanifest">
     <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function toggelNav (){
+            const nav  = document.querySelector('.nav');
+            const toggelNav = document.querySelector('.toggelNav');
+
+            if( nav.style.display === 'none'){
+                nav.style.display = 'flex';
+                toggelNav.style.transform = "rotate(180deg)";
+                // toggelNav.style.margin = '00px'
+                toggelNav.style.top = '-35px'
+                // toggelNav.st
+            }else{
+                nav.style.display = 'none';
+                toggelNav.style.top = '-35px'
+                toggelNav.style.transform = "rotate(0deg)";
+            }
+
+        }
+        function widthChange() {
+            const nav  = document.querySelector('.nav');
+            const toggelNav = document.querySelector('.toggelNav');
+            if( window.innerWidth >= 540 ){
+                nav.style.display = 'flex';
+            }
+           
+        }
+        window.onresize = widthChange;
+    </script>
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="stylesheet" href="Styles/home.css">
     <link rel="stylesheet" href="Styles/contact.css">
+    <link rel="stylesheet" href="Styles/media.css">
 
 </head>
 <body>
     <div class="all">
 
         <div class="Home-page">
+            
             <div class="navbar" style=" color:black;">
                 <header>
                     <img src="Styles/images/Aero_Logo.png" alt="logo" class="logo" width="70" >
-                    <nav class="nav">
+                    
+                    <div class="toggelNav" onclick="toggelNav()">
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                        <box-icon name='chevron-down' type='solid' width="100px"></box-icon>
+                        <img src="./Styles/images/dropdown.png" width="50px" height="40px" alt="">
+                    </div>
+                    <nav class="nav" >
                         <ul class="nav_list">
                             <li class="nav_list-item">
                                 <a href="./" class="nav_link">Home</a>
@@ -192,5 +228,6 @@
     
     
         <script src="./script/script.js"></script>
+       
     </body>
     </html>

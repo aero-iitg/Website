@@ -1,4 +1,4 @@
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 540px) {
     header{
         /* display: flex; */
         justify-content: space-between;
@@ -6,14 +6,15 @@
     .toggelNav{
         /* border: 2px solid blue ; */
         position: relative;
-        top: -7px;
+        
+        top: -35px;
         height: 40px;
         width: 50px;
-        left: 25vw;
+       
         margin: 10px;
         display: block;
         z-index: 11;
-        transform: rotate(90deg);
+        transform: rotate(0deg);
         transition: 0s;
 
     }

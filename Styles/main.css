@@ -101,7 +101,7 @@ header {
 
 
 
-@media screen and (min-width: 690px ) {
+@media screen and (min-width: 540px ) {
     .toggelNav{
         /* border: 2px solid blue ; */
         display: none;
@@ -114,7 +114,7 @@ header {
     }
     .nav_list{
         display : flex;
-        padding-left: 30vw;
+        padding-left: 0vw;
         justify-content: flex-end;
         
     }

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   
     try {
-      const response = await fetch("https://aeroclubbackend.onrender.com/initiatives/accessAerialArchivesPost");
+      const response = await fetch("https://aero-backend.onrender.com/initiatives/accessAerialArchivesPost");
       const data = await response.json();
   
       data.forEach((ele,index) => {
